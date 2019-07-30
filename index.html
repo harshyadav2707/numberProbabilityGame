@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>Random Gen</title>
+    <link href='https://fonts.googleapis.com/css?family=Trochut' rel='stylesheet'>
+    <style>
+        body{
+            padding: 1vw 0vw 0vw 0vw;
+            margin: 0px;
+            background-color: #B2DBBF;
+        }
+        h1{
+            color: grey;
+            font-size: 4vw;
+            font-family: Trochut;
+        }
+        .head{
+            padding: 3vw;
+            background-image:linear-gradient(to bottom,#247BA0,#70C1B3);
+            background-size:cover;
+            background-position: bottom center;
+            height: auto;
+            font-family: fantasy;
+            font-size: 2vw;
+        }
+        .bx{
+            padding: 3vw;
+            font-size: 3vw;
+            background-color: #FF1654;
+            height: 10vw;
+            width: 30vw;
+            border-radius: 5vw;
+            color: #F3FFBD;
+        }
+        .bo{
+            padding: 3vw;
+            font-size: 3vw;
+            background-color: #F3FFBD;
+            height: 10vw;
+            width: 30vw;
+            border-radius: 5vw;
+            color: #FF1654;
+        }
+        .inp{
+            border: 0px;
+            border-radius:5px;
+            border-color: white;
+            height: 3vw;
+            width: 3vw;
+            font-size: 1.5vw;
+            font-family: cursive;
+            color: #FF1654;
+        }
+        .but{
+            background-color: #F3FFBD;
+            border:1px;
+            border-radius: 5px;
+            border-color: white;
+            padding: 10px 20px;
+        }
+        
+    </style>
+</head>
+    <body>
+        <center>
+            <h1>Number Probability Game</h1>
+            <div class="head">
+            <form>
+            Enter Number between(0-9) <br><br><input id="num" type="number" class="inp"> 
+            </form>
+            <button class="but" onclick="gen()">Match</button>
+            </div>
+            <p id="box"></p>
+            
+            
+            
+            <script>
+        function gen()
+        {
+        var x,y;
+        x=document.getElementById("num").value;
+        y=Math.floor(Math.random() * 10);
+            if(x==y){
+                
+                var el=document.querySelector("#box");
+                el.classList.add("bo");
+                document.getElementById("box").innerHTML = "Hurray! Number Generated matched "+y;
+                    }
+            else{
+                    
+                var el=document.querySelector("#box");
+                el.classList.add("bx");
+                document.getElementById("box").innerHTML="Opps! Number Generated is "+y;
+                }
+        }
+        </script>
+        
+            
+        </center>
+        
+    </body>
+    
+</html>
